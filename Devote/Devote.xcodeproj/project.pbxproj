@@ -17,6 +17,7 @@
 		8B896EFC28C0E58100B9815E /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B896EF928C0E58100B9815E /* sound-rise.mp3 */; };
 		8B896EFD28C0E58100B9815E /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B896EFA28C0E58100B9815E /* sound-tap.mp3 */; };
 		8B896F0628C0ECBE00B9815E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B896F0528C0ECBE00B9815E /* Constant.swift */; };
+		8B896F0928C0F16800B9815E /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B896F0828C0F16800B9815E /* HideKeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8B896EFA28C0E58100B9815E /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		8B896F0228C0E65700B9815E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8B896F0528C0ECBE00B9815E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8B896F0828C0F16800B9815E /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +127,18 @@
 				8B896EE528C0E4A600B9815E /* DevoteApp.swift */,
 				8B896EFF28C0E5E300B9815E /* Views */,
 				8B896F0328C0EC5D00B9815E /* Utility */,
+				8B896F0728C0F14C00B9815E /* Extensions */,
 				8B896F0128C0E5FA00B9815E /* Resources */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8B896F0728C0F14C00B9815E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B896F0828C0F16800B9815E /* HideKeyboardExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B896EEF28C0E4AA00B9815E /* Persistence.swift in Sources */,
+				8B896F0928C0F16800B9815E /* HideKeyboardExtension.swift in Sources */,
 				8B896EE828C0E4A600B9815E /* ContentView.swift in Sources */,
 				8B896F0628C0ECBE00B9815E /* Constant.swift in Sources */,
 				8B896EF228C0E4AA00B9815E /* Devote.xcdatamodeld in Sources */,
