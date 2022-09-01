@@ -24,53 +24,59 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                VStack(spacing: 16) {
-                    TextField("New task:", text: $task)
+            ZStack {
+                VStack {
+                    VStack(spacing: 16) {
+                        TextField("New task:", text: $task)
+                            .padding()
+                            .background(
+                                Color(uiColor: .systemGray6)
+                            )
+                            .cornerRadius(10)
+                        
+                        Button(action: {
+                            addItem()
+                        }, label: {
+                            Spacer()
+                            Text("SAVE")
+                            Spacer()
+                        })
                         .padding()
-                        .background(
-                            Color(uiColor: .systemGray6)
-                        )
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(isButtonDisabled ? .gray : .pink)
                         .cornerRadius(10)
-                    
-                    Button(action: {
-                        addItem()
-                    }, label: {
-                        Spacer()
-                        Text("SAVE")
-                        Spacer()
-                    })
-                    .padding()
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(isButtonDisabled ? .gray : .pink)
-                    .cornerRadius(10)
-                    .disabled(isButtonDisabled)
+                        .disabled(isButtonDisabled)
 
-                }
-                .padding()
-                
-                List {
-                    ForEach(items) { item in
-                            NavigationLink {
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                            } label: {
-                                VStack(alignment: .leading) {
-                                    Text(item.task ?? "")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    
-                                    Text(item.timestamp!, formatter: itemFormatter)
-                                        .font(.footnote)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                    } //: ForEach
-                    .onDelete(perform: deleteItems)
+                    }
+                    .padding()
                     
-                } //: List
-                
-            } //: VStack
+                    List {
+                        ForEach(items) { item in
+                                NavigationLink {
+                                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                } label: {
+                                    VStack(alignment: .leading) {
+                                        Text(item.task ?? "")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
+                                        
+                                        Text(item.timestamp!, formatter: itemFormatter)
+                                            .font(.footnote)
+                                            .foregroundColor(.gray)
+                                    }
+                                }
+                        } //: ForEach
+                        .onDelete(perform: deleteItems)
+                        
+                    } //: List
+                    .listStyle(InsetGroupedListStyle())
+                    .shadow(color: .black.opacity(0.3), radius: 12)
+                    .padding(.vertical, 0)
+                    .frame(maxWidth:640)
+                    
+                } //: VStack
+            } //: ZStack
             .navigationTitle("Daily tasks")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
@@ -78,8 +84,14 @@ struct ContentView: View {
                     EditButton()
                 }
             }
-            Text("Select an item")
-        }
+            .background(BackgroundImageView())
+            .background(backgroundGradient.ignoresSafeArea(.all))
+            .onAppear() {
+                UITableView.appearance().backgroundColor = UIColor.clear
+            }
+            
+        } //: NavigationView
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     private func addItem() {
