@@ -16,6 +16,7 @@
 		8B896EFB28C0E58100B9815E /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B896EF828C0E58100B9815E /* sound-ding.mp3 */; };
 		8B896EFC28C0E58100B9815E /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B896EF928C0E58100B9815E /* sound-rise.mp3 */; };
 		8B896EFD28C0E58100B9815E /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B896EFA28C0E58100B9815E /* sound-tap.mp3 */; };
+		8B896F0628C0ECBE00B9815E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B896F0528C0ECBE00B9815E /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8B896EF928C0E58100B9815E /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		8B896EFA28C0E58100B9815E /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		8B896F0228C0E65700B9815E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8B896F0528C0ECBE00B9815E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				8B896F0228C0E65700B9815E /* Info.plist */,
-				8B896EFE28C0E5A600B9815E /* Presentation */,
+				8B896F0428C0EC7200B9815E /* Presentation */,
 				8B896F0028C0E5EB00B9815E /* Data */,
 				8B896EEB28C0E4AA00B9815E /* Preview Content */,
 			);
@@ -78,22 +80,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8B896EFE28C0E5A600B9815E /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				8B896EE528C0E4A600B9815E /* DevoteApp.swift */,
-				8B896EFF28C0E5E300B9815E /* Views */,
-				8B896F0128C0E5FA00B9815E /* Resources */,
-			);
-			name = Presentation;
-			sourceTree = "<group>";
-		};
 		8B896EFF28C0E5E300B9815E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8B896EE728C0E4A600B9815E /* ContentView.swift */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8B896F0028C0E5EB00B9815E /* Data */ = {
@@ -114,6 +107,27 @@
 				8B896EFA28C0E58100B9815E /* sound-tap.mp3 */,
 			);
 			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8B896F0328C0EC5D00B9815E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8B896F0528C0ECBE00B9815E /* Constant.swift */,
+			);
+			name = Utility;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8B896F0428C0EC7200B9815E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8B896EE528C0E4A600B9815E /* DevoteApp.swift */,
+				8B896EFF28C0E5E300B9815E /* Views */,
+				8B896F0328C0EC5D00B9815E /* Utility */,
+				8B896F0128C0E5FA00B9815E /* Resources */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +205,7 @@
 			files = (
 				8B896EEF28C0E4AA00B9815E /* Persistence.swift in Sources */,
 				8B896EE828C0E4A600B9815E /* ContentView.swift in Sources */,
+				8B896F0628C0ECBE00B9815E /* Constant.swift in Sources */,
 				8B896EF228C0E4AA00B9815E /* Devote.xcdatamodeld in Sources */,
 				8B896EE628C0E4A600B9815E /* DevoteApp.swift in Sources */,
 			);
